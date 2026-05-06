@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Bolt, Security, BarChart, Link as LinkIcon, ArrowForward, GitHub } from "@mui/icons-material";
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,10 +11,10 @@ export default function Home() {
   }, []);
 
   const features = [
-    { icon: <Bolt sx={{ fontSize: 48 }} />, title: "Lightning Fast", desc: "Get your short URL instantly" },
-    { icon: <Security sx={{ fontSize: 48 }} />, title: "Privacy First", desc: "No tracking, no data collection" },
-    { icon: <BarChart sx={{ fontSize: 48 }} />, title: "Easy Analytics", desc: "Track your link performance" },
-    { icon: <LinkIcon sx={{ fontSize: 48 }} />, title: "Reliable Links", desc: "Your links stay active forever" },
+    { icon: "bolt", title: "Lightning Fast", desc: "Get your short URL instantly" },
+    { icon: "shield", title: "Privacy First", desc: "No tracking, no data collection" },
+    { icon: "bar_chart", title: "Easy Analytics", desc: "Track your link performance" },
+    { icon: "link", title: "Reliable Links", desc: "Your links stay active forever" },
   ];
 
   return (
@@ -44,7 +43,7 @@ export default function Home() {
               <Link href="/shorten">
                 <button className='group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2'>
                   Try Now
-                  <ArrowForward className="group-hover:translate-x-1 transition-transform" />
+                  <span className="material-icons group-hover:translate-x-1 transition-transform text-sm">arrow_forward</span>
                 </button>
               </Link>
 
@@ -65,10 +64,10 @@ export default function Home() {
                 />
                 {/* Floating elements */}
                 <div className="absolute -top-4 -right-4 bg-green-500 text-white p-3 rounded-full shadow-lg animate-bounce">
-                  <Bolt sx={{ fontSize: 24 }} />
+                  <span className="material-icons text-xl">bolt</span>
                 </div>
                 <div className="absolute -bottom-4 -left-4 bg-purple-500 text-white p-3 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '0.5s' }}>
-                  <Security sx={{ fontSize: 24 }} />
+                  <span className="material-icons text-xl">shield</span>
                 </div>
               </div>
             </div>
@@ -95,7 +94,7 @@ export default function Home() {
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <div className="text-blue-600 mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                  {feature.icon}
+                  <span className="material-icons text-5xl">{feature.icon}</span>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
@@ -140,7 +139,7 @@ export default function Home() {
           <Link href="/shorten">
             <button className='group bg-white text-gray-900 hover:bg-gray-100 px-12 py-4 rounded-xl font-bold text-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-3 mx-auto'>
               Start Shortening Now
-              <ArrowForward className="group-hover:translate-x-2 transition-transform" sx={{ fontSize: 24 }} />
+              <span className="material-icons group-hover:translate-x-2 transition-transform">arrow_forward</span>
             </button>
           </Link>
         </div>
